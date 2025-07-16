@@ -40,9 +40,9 @@ const AdminPage = () => {
         if (passwordValidation.value === 'nike123') {
           setIsAuthenticated(true)
           setIsRealAdmin(false) // Always demo mode on GitHub Pages
-          showToast('Demo Admin Access Granted - Changes saved locally only', 'warning')
+          showToast('Admin Access Granted - Demo Mode Active', 'success')
         } else {
-          showToast('Wrong password. Try: nike123', 'error')
+          showToast('Access denied. Invalid credentials.', 'error')
         }
       } else {
         // Local development - use backend authentication
@@ -53,7 +53,7 @@ const AdminPage = () => {
       }
     } catch (error) {
       if (isGitHubPages) {
-        showToast('Wrong password. Try: nike123', 'error')
+        showToast('Access denied. Invalid credentials.', 'error')
       } else {
         showToast('Authentication failed. Please try again.', 'error')
       }
@@ -120,9 +120,9 @@ const AdminPage = () => {
             <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
               <p className="text-sm text-blue-700">
                 {isGitHubPages ? (
-                  <>💡 <strong>Demo Mode Only:</strong> Password is <code className="bg-blue-100 px-1 rounded">nike123</code> - Changes save locally only.</>
+                  <>� <strong>Demo Environment:</strong> This is a demonstration version with limited functionality.</>
                 ) : (
-                  <>💡 <strong>Try it out!</strong> Use any password to access demo mode with local-only changes.</>
+                  <>💡 <strong>Development Mode:</strong> Full admin features available with backend integration.</>
                 )}
               </p>
             </div>

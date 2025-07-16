@@ -33,11 +33,11 @@
 
 3. **Test Live Site:**
    - Visit: https://SDeath-Scythe.github.io/Vite_Repositry/
-   - Test admin panel with password: `nike123`
+   - Test admin panel with demo authentication
    - Verify mobile responsiveness
 
 ### 📝 Admin Panel Features (Demo Mode)
-- **Password**: `nike123`
+- **Authentication**: Demo mode with secure access
 - **Add Products**: Full product creation with validation
 - **Edit Products**: Modify existing products
 - **Delete Products**: Remove products from catalog

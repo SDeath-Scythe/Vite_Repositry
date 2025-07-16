@@ -81,9 +81,9 @@ npm run deploy
 ```
 
 ### Admin Panel on GitHub Pages
-- **Password**: `nike123`
 - **Mode**: Demo only (changes saved to localStorage)
 - **Features**: Full product management with client-side persistence
+- **Access**: Protected with authentication
 
 ## 🔧 Configuration
 
@@ -95,7 +95,6 @@ npm run deploy
 ### Local Development with Backend
 - Backend runs on `http://localhost:3001`
 - Frontend runs on `http://localhost:5173` or available port
-- Admin password: `nike123`
 - Real admin mode with database persistence
 
 ## 🛡️ Security Features
@@ -142,7 +141,7 @@ Visit the live site: **[Nike Shop](https://SDeath-Scythe.github.io/Vite_Repositr
 
 Try the admin panel:
 1. Navigate to `/admin`
-2. Use password: `nike123`
+2. Use the demo authentication
 3. Explore the demo features!
 ```
 
