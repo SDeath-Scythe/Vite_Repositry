@@ -31,7 +31,7 @@ const Hero = () => {
           your active life.
         </p>
 
-        <Button label='Shop now' iconURL={arrowRight} />
+        <Button label='Shop now' iconURL={arrowRight} navigateTo="/catalog" />
 
         <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16'>
           {statistics.map((stat, index) => (
@@ -48,7 +48,7 @@ const Hero = () => {
       <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
         <img
           src={bigShoeImg}
-          alt='shoe colletion'
+          alt='shoe collection'
           width={610}
           height={502}
           className='object-contain relative z-10'

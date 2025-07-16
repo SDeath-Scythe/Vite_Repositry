@@ -1,5 +1,3 @@
-//importing all the sections to export them from here
-
 import Hero from "./Hero";
 import PopularProducts from "./PopularProducts";
 import SuperQuality from "./SuperQuality";
@@ -16,5 +14,5 @@ export { Hero,
         SpecialOffers,
         CustomerReviews,
         Subscribe,
-        Footer 
+        Footer
     };

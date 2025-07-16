@@ -17,15 +17,15 @@ const SpecialOffers = () => {
           <span className='text-coral-red inline-block mt-3 ml-3 '>Special</span> Offers
         </h2>
         <p className='mt-4 lg:max-w-lg info-text'>
-          Embark on a shopping journey that redefines your experience with unbeatable deals. From premire selections to incredable savings, we offer unparalleled value that sets us apart. 
+          Embark on a shopping journey that redefines your experience with unbeatable deals. From premier selections to incredible savings, we offer unparalleled value that sets us apart. 
         </p>
         <p className="mt-6 lg:max-w-lg info-text">
-          Navigate a realm of posibilities designed to fulfill your unique desires, surpassing the loftiest expextations. Your journey with us is nothing short of exceptional.
+          Navigate a realm of possibilities designed to fulfill your unique desires, surpassing the loftiest expectations. Your journey with us is nothing short of exceptional.
         </p>
         <div className="mt-11 flex flex-wrap gap-4">
-          <Button label='Shop now' iconURL={arrowRight}/>
+          <Button label='Shop now' iconURL={arrowRight} navigateTo="/catalog"/>
           <Button label='Learn more' backgroundColor="bg-white" 
-          borderColor="border-slate-grey" textColor="text-slate-grey" />
+          borderColor="border-slate-grey" textColor="text-slate-grey" href="#about-us" />
         </div>
       </div>
     </section>

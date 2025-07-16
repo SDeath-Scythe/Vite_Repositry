@@ -14,13 +14,13 @@ const SuperQuality = () => {
           <span className='text-coral-red inline-block mt-3'> Quality</span> shoes
         </h2>
         <p className='mt-4 lg:max-w-lg info-text'>
-          Ensuring preimum comfort and style, our meticulously crafted footware is designed to elavte your experince, providing you with unmatched quality, inovation, and a touch of elegance.  
+          Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience, providing you with unmatched quality, innovation, and a touch of elegance.  
         </p>
         <p className="mt-6 lg:max-w-lg info-text">
-          Our dedication to ditails and exelance ensures your satisfaction.
+          Our dedication to details and excellence ensures your satisfaction.
         </p>
         <div className="mt-11">
-          <Button label='View ditails' />
+          <Button label='View details' href="#products" />
         </div>
       </div>
 
