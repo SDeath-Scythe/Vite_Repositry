@@ -36,20 +36,34 @@ const AdminPage = () => {
     
     try {
       if (isGitHubPages) {
-        // On GitHub Pages, only demo mode is available
+        // On GitHub Pages - always give access, but different levels
+        setIsAuthenticated(true)
         if (passwordValidation.value === 'nike123') {
-          setIsAuthenticated(true)
-          setIsRealAdmin(false) // Always demo mode on GitHub Pages
-          showToast('Admin Access Granted - Demo Mode Active', 'success')
+          setIsRealAdmin(false) // Even correct password is demo mode on GitHub Pages
+          showToast('Admin Access Granted - Full Demo Features', 'success')
         } else {
-          showToast('Access denied. Invalid credentials.', 'error')
+          setIsRealAdmin(false) // Wrong password also gets demo mode
+          showToast('Demo Access Granted - Basic Features', 'warning')
         }
       } else {
-        // Local development - use backend authentication
-        const response = await authAPI.login(passwordValidation.value)
+        // Local development - different access levels based on password
         setIsAuthenticated(true)
-        setIsRealAdmin(response.isRealAdmin)
-        showToast(response.message, response.isRealAdmin ? 'success' : 'warning')
+        if (passwordValidation.value === 'nike123') {
+          // Correct password - try for real admin access
+          try {
+            const response = await authAPI.login(passwordValidation.value)
+            setIsRealAdmin(response.isRealAdmin)
+            showToast('Admin Access Granted - Full Backend Features', 'success')
+          } catch (error) {
+            // Backend unavailable, fallback to demo
+            setIsRealAdmin(false)
+            showToast('Admin Access Granted - Demo Mode (Backend Unavailable)', 'warning')
+          }
+        } else {
+          // Wrong password - demo mode access
+          setIsRealAdmin(false)
+          showToast('Demo Access Granted - Local Storage Only', 'warning')
+        }
       }
     } catch (error) {
       if (isGitHubPages) {
