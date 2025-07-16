@@ -39,10 +39,10 @@ const AdminPage = () => {
         // On GitHub Pages - always give access, but different levels
         setIsAuthenticated(true)
         if (passwordValidation.value === 'nike123') {
-          setIsRealAdmin(false) // Even correct password is demo mode on GitHub Pages
+          setIsRealAdmin(true) // Correct password gets "admin" status (but still demo features)
           showToast('Admin Access Granted - Full Demo Features', 'success')
         } else {
-          setIsRealAdmin(false) // Wrong password also gets demo mode
+          setIsRealAdmin(false) // Wrong password gets basic demo
           showToast('Demo Access Granted - Basic Features', 'warning')
         }
       } else {
@@ -188,12 +188,12 @@ const AdminPage = () => {
               <h1 className="text-3xl font-palanquin font-bold">
                 Admin <span className="text-coral-red">Dashboard</span>
               </h1>
-              {!isRealAdmin && (
+              {(!isRealAdmin || isGitHubPages) && (
                 <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 border border-yellow-200">
                   <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 15.5c-.77.833.192 2.5 1.732 2.5z" />
                   </svg>
-                  Demo Mode - Changes saved locally only
+                  {isGitHubPages ? 'Demo Environment - No Backend Connection' : 'Demo Mode - Changes saved locally only'}
                 </div>
               )}
             </div>

@@ -53,10 +53,7 @@ const ProductCard = ({ product, isSelected = false, isFirst = false }) => {
     }
   }
 
-  const handleQuickView = () => {
-    // TODO: Open product modal
-    alert(`Quick view for ${product.name}`)
-  }
+
 
   const cardClasses = `group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
     isSelected 
@@ -109,7 +106,10 @@ const ProductCard = ({ product, isSelected = false, isFirst = false }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative aspect-square bg-gray-100 overflow-hidden">
+      <div 
+        className="relative aspect-square bg-gray-100 overflow-hidden cursor-pointer"
+        onClick={handleAddToCart}
+      >
         {!isImageLoaded && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
             <span className="text-gray-400 font-montserrat">Loading...</span>
@@ -118,27 +118,11 @@ const ProductCard = ({ product, isSelected = false, isFirst = false }) => {
         <img
           src={product.imgURL}
           alt={product.name}
-          className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${
+          className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ${
             isImageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => setIsImageLoaded(true)}
         />
-        
-        {/* Quick Actions Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <button
-            onClick={handleQuickView}
-            className="bg-white text-black px-4 py-2 rounded-lg font-montserrat text-sm hover:scale-105 transition-transform"
-          >
-            Quick View
-          </button>
-          <button
-            onClick={handleAddToCart}
-            className="bg-coral-red text-white px-4 py-2 rounded-lg font-montserrat text-sm hover:scale-105 transition-transform"
-          >
-            Add to Cart
-          </button>
-        </div>
       </div>
 
       {/* Product Info */}
